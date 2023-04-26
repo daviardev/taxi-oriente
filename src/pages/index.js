@@ -1,8 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import { signIn } from 'next-auth/react'
+
+import Logo from '@/components/Logo'
 
 import styles from '@/styles/Login.module.css'
 
@@ -18,18 +19,8 @@ export default function Login () {
 
       <div className={styles.containerApp}>
         <section className={styles.containerLogin}>
-          <center>
-            <Image
-              src='/logo-taxiapp.png'
-              alt='logo'
-              width={165}
-              height={120}
-              className={styles.imageLogo}
-            />
-          </center>
-          <h1 className={styles.titleLogo}>
-            TAXIS ORIENTE
-          </h1>
+          <Logo />
+          <br /> <br /> <br /> <br /> <br />
           <button
             className={styles.buttonLogin}
             onClick={() => router.push('/usuario-cliente')}
