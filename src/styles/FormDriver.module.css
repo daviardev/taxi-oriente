@@ -1,10 +1,80 @@
-.contentApp {
+.container {
     height: 100vh;
     display: flex;
+    padding: 300px;
     flex-direction: column;
-    background-color: var(--background-color);
+    justify-content: center;
+    align-items: center;
 }
 
 .iconUser {
-    
+    display: flex;
+    align-items: center;
+    font-size: 70px;
+}
+
+.arrow {
+    position: absolute;
+    width: 30px;
+    display: flex;
+    height: 30px;
+    margin-left: 90px;
+}
+
+.content .userDetails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 22px 0;
+}
+
+.userDetails .inputBox {
+    margin-bottom: 10px;
+    width: calc(100% / 2 - 20px);
+}
+
+.inputBox span.details {
+    display: flex;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-left: 60px;
+    font-weight: bolder;
+}
+
+.userDetails .inputBox input {
+    width: 66%;
+    border: none;
+    background: none;
+    outline: 0;
+    font-size: 16px;
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+@media(max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .userDetails .inputBox {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .content .userDetails {
+        max-height: 300px;
+        margin-top: 70px;
+        overflow-y: scroll;
+    }
+
+    .userDetails::-webkit-scrollbar {
+        width: 5px;
+    }
+}
+
+@media(max-width: 459px) {
+    .container .content {
+        flex-direction: column;
+        width: 400px;
+    }
 }
