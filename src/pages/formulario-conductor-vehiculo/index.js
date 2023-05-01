@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 import Logo from '@/components/Logo'
 import Button from '@/components/Button'
@@ -9,6 +10,13 @@ import { IoIosArrowDroprightCircle } from 'react-icons/io'
 import styles from '@/styles/FormDriver.module.css'
 
 export default function FormDriverVehicle () {
+  const router = useRouter()
+
+  const handleClick = e => {
+    e.preventDefault()
+    router.push('/usuario-cliente')
+  }
+
   return (
     <>
       <Head>
@@ -54,7 +62,7 @@ export default function FormDriverVehicle () {
 
               <div className={styles.button}>
                 <center>
-                  <Button>
+                  <Button onClick={handleClick}>
                     Siguiente
                     <IoIosArrowDroprightCircle className={styles.arrow} />
                   </Button>
