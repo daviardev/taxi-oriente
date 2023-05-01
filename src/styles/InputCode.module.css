@@ -1,0 +1,25 @@
+.codeInput {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.codeInputs {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.codeInputs input {
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+    text-align: center;
+    height: 47px;
+    width: 52px;
+    margin: 0 4px auto;
+    border: 2px solid #000;
+    border-radius: 6px;
+    font-size: 16px;
+}
