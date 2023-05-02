@@ -1,43 +1,35 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 
-import { signIn } from 'next-auth/react'
+import { useSession, getProviders, getSession } from 'next-auth/react'
 
-import Logo from '@/components/Logo'
+import Login from '@/components/Login'
+import Sidebar from '@/components/Sidebar'
 
-import styles from '@/styles/Login.module.css'
+export default function Home ({ providers }) {
+  const { data: session } = useSession()
 
-export default function Login () {
-  const router = useRouter()
-
+  if (!session) return <Login providers={providers} />
   return (
     <>
       <Head>
-        <title>Iniciar sesión | Taxi Orientes S.A.S</title>
+        <title>Inicio | Taxi Orientes S.A.S</title>
         <link rel='icon' href='/logo-taxiapp.png' />
       </Head>
 
-      <div className={styles.containerApp}>
-        <section className={styles.containerLogin}>
-          <Logo />
-          <br /> <br /> <br /> <br /> <br />
-          <button
-            className={styles.buttonLogin}
-            onClick={() => router.push('/usuario-cliente')}
-          >
-            Registrarse
-          </button>
-
-          <button
-            className={styles.buttonLogin}
-            onClick={async () => {
-              await signIn('google')
-            }}
-          >
-            Iniciar Sesión
-          </button>
-        </section>
-      </div>
+      <h1>Inicio</h1>
+      <Sidebar />
     </>
   )
+}
+
+export async function getServerSideProps (context) {
+  const providers = await getProviders()
+  const session = await getSession(context)
+
+  return {
+    props: {
+      providers,
+      session
+    }
+  }
 }
