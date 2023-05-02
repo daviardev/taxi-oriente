@@ -18,7 +18,7 @@ export default function VerificationCode () {
 
   const handleClick = e => {
     e.preventDefault()
-    router.push('/formulario-conductor-vehiculo')
+    router.push('/')
   }
   return (
     <>

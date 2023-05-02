@@ -14,7 +14,7 @@ export default function FormDriverVehicle () {
 
   const handleClick = e => {
     e.preventDefault()
-    router.push('/usuario-cliente')
+    router.push('/verificacion-codigo')
   }
 
   return (

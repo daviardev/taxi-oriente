@@ -28,7 +28,7 @@ export default function UserClient () {
             </center>
           </section>
 
-          <section className={styles.iconUser}>
+          <section className={styles.iconUser} onClick={() => router.push('/formulario-usuario')}>
             <center>
               <FaUserPlus />
               <p className={styles.text}>¿Cómo Usuario?</p>

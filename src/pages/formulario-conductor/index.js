@@ -14,7 +14,7 @@ export default function FormDriver () {
 
   const handleClick = e => {
     e.preventDefault()
-    router.push('/verificacion-codigo')
+    router.push('/formulario-conductor-vehiculo')
   }
   return (
     <>

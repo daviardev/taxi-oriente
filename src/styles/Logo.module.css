@@ -1,5 +1,6 @@
 .titleLogo {
     margin: 0;
+    cursor: pointer;
     font-size: 24px;
     text-align: center;
     font-weight: bold;
